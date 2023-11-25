@@ -15,7 +15,7 @@ def add_todo():
 st.title('My todo')
 
 for todo in todos:
-    checkbox = st.checkbox(todo, key=todo)
+    checkbox = st.session_state(todo, key=todo)
     if checkbox:
         todos.remove(todo)
         functions.out_todos(todos)
